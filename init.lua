@@ -1,17 +1,25 @@
 local MP = minetest.get_modpath("city_buildings")
 
-building_lib.register_building("building_lib:street_straight", {
-	catalog = MP .. "/schematics/street_straight.zip"
+local disable_orientation = {
+	["default:stonebrick"] = true
+}
+
+building_lib.register_building("city_buildings:street_straight", {
+	catalog = MP .. "/schematics/street_straight.zip",
+	disable_orientation = disable_orientation
 })
 
-building_lib.register_building("building_lib:street_corner", {
-	catalog = MP .. "/schematics/street_corner.zip"
+building_lib.register_building("city_buildings:street_corner", {
+	catalog = MP .. "/schematics/street_corner.zip",
+	disable_orientation = disable_orientation
 })
 
-building_lib.register_building("building_lib:street_all_sides", {
-	catalog = MP .. "/schematics/street_all_sides.zip"
+building_lib.register_building("city_buildings:street_all_sides", {
+	catalog = MP .. "/schematics/street_all_sides.zip",
+	disable_orientation = disable_orientation
 })
 
-building_lib.register_building("building_lib:street_t", {
-	catalog = MP .. "/schematics/street_t.zip"
+building_lib.register_building("city_buildings:street_t", {
+	catalog = MP .. "/schematics/street_t.zip",
+	disable_orientation = disable_orientation
 })
