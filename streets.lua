@@ -10,6 +10,7 @@ building_lib.register_building("city_buildings:street_slope", {
 		offset = {x=0, y=0, z=0},
 		size = {x=1, y=2, z=1}
 	},
+	rotation_offset = 180,
 	disable_orientation = disable_orientation
 })
 
