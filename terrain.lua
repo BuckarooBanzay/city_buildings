@@ -43,6 +43,6 @@ building_lib.register_building("city_buildings:water", {
         cache = true
 	},
 	replace = {
-		["default:stone"] = "default:water_source"
+		["full_block"] = "default:water_source"
 	}
 })

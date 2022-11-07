@@ -9,12 +9,12 @@ minetest.register_on_generated(building_lib.create_mapgen({
                 full = "city_buildings:terrain_full",
                 slope = "city_buildings:terrain_slope",
                 slope_inner = "city_buildings:terrain_slope_inner",
-                slope_outer = "city_buildings:terrain_slope_outer"
+                slope_outer = "city_buildings:terrain_slope_outer",
+                water = "city_buildings:water"
             }
         }
     },
-    water = {
-        level = 1,
-        building = "city_buildings:water"
-    }
+    from_y = -5,
+    to_y = 10,
+    water_level = 0
 }))
