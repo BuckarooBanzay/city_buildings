@@ -36,3 +36,13 @@ building_lib.register_building("city_buildings:terrain_slope_outer", {
         cache = true
 	}
 })
+
+building_lib.register_building("city_buildings:water", {
+	catalog = {
+		filename = MP .. "/schematics/full.zip",
+        cache = true
+	},
+	replace = {
+		["default:stone"] = "default:water_source"
+	}
+})

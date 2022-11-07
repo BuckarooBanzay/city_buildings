@@ -12,5 +12,9 @@ minetest.register_on_generated(building_lib.create_mapgen({
                 slope_outer = "city_buildings:terrain_slope_outer"
             }
         }
+    },
+    water = {
+        level = 1,
+        building = "city_buildings:water"
     }
 }))
