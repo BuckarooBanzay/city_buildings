@@ -24,7 +24,8 @@ building_lib.register_building("city_buildings:terrain_slope", {
 		offset = {x=2, y=0, z=0},
 		size = {x=1, y=1, z=1},
         cache = true
-	}
+	},
+	rotation_offset = 90
 })
 
 building_lib.register_building("city_buildings:terrain_slope_outer", {

@@ -1,7 +1,7 @@
 local MP = minetest.get_modpath("city_buildings")
 
 local disable_orientation = {
-	["default:stonebrick"] = true
+	["moreblocks:iron_stone_bricks"] = true
 }
 
 building_lib.register_building("city_buildings:street_slope", {
