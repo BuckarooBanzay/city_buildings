@@ -1,37 +1,5 @@
 local MP = minetest.get_modpath("city_buildings")
 
-local streets = {
-	"street_straight",
-	"street_corner",
-	"street_all_sides",
-	"street_t"
-}
-
-for _, name in pairs(streets) do
-	building_lib.register_building("city_buildings:" .. name, {
-		catalog = MP .. "/schematics/" .. name .. ".zip",
-		disable_orientation = {
-			["default:stonebrick"] = true
-		}
-	})
-end
-
-local r = {
-	"building1",
-	"building1_1",
-	"building2",
-	"building2_1",
-	"building2_2",
-	"building2_3",
-	"building3",
-	"building3_1",
-	"park_3x3",
-	"park_4x4",
-	"park_5x5"
-}
-
-for _, name in pairs(r) do
-	building_lib.register_building("city_buildings:" .. name, {
-		catalog = MP .. "/schematics/" .. name .. ".zip"
-	})
-end
+dofile(MP .. "/streets.lua")
+dofile(MP .. "/buildings.lua")
+dofile(MP .. "/terrain.lua")
