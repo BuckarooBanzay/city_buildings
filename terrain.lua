@@ -6,6 +6,9 @@ building_lib.register_building("city_buildings:terrain_full", {
 		offset = {x=0, y=0, z=0},
 		size = {x=1, y=1, z=1},
         cache = true
+	},
+	replace = {
+		["default:cobble"] = "default:dirt_with_grass"
 	}
 })
 
