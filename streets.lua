@@ -20,6 +20,19 @@ building_lib.register_building("city_buildings:street_straight", {
 		offset = {x=2, y=0, z=0},
 		size = {x=1, y=1, z=1}
 	},
+	markers = {
+		{
+			texture = "building_lib_arrow.png",
+			position = {x=1.5, y=0.2, z=0.5},
+			rotation = {x=math.pi/2, y=0, z=math.pi/2},
+			size = {x=10, y=10}
+		},{
+			texture = "building_lib_arrow.png",
+			position = {x=-0.5, y=0.2, z=0.5},
+			rotation = {x=math.pi/2, y=0, z=-math.pi/2},
+			size = {x=10, y=10}
+		}
+	},
 	disable_orientation = disable_orientation
 })
 
@@ -28,6 +41,29 @@ building_lib.register_building("city_buildings:street_all_sides", {
 		filename = MP .. "/schematics/street.zip",
 		offset = {x=1, y=0, z=0},
 		size = {x=1, y=1, z=1}
+	},
+	markers = {
+		{
+			texture = "building_lib_arrow.png",
+			position = {x=1.5, y=0.2, z=0.5},
+			rotation = {x=math.pi/2, y=0, z=math.pi/2},
+			size = {x=10, y=10}
+		},{
+			texture = "building_lib_arrow.png",
+			position = {x=-0.5, y=0.2, z=0.5},
+			rotation = {x=math.pi/2, y=0, z=-math.pi/2},
+			size = {x=10, y=10}
+		},{
+			texture = "building_lib_arrow.png",
+			position = {x=0.5, y=0.2, z=1.5},
+			rotation = {x=math.pi/2, y=0, z=math.pi},
+			size = {x=10, y=10}
+		},{
+			texture = "building_lib_arrow.png",
+			position = {x=0.5, y=0.2, z=-0.5},
+			rotation = {x=math.pi/2, y=0, z=0},
+			size = {x=10, y=10}
+		}
 	},
 	disable_orientation = disable_orientation
 })
@@ -38,6 +74,24 @@ building_lib.register_building("city_buildings:street_t", {
 		offset = {x=3, y=0, z=0},
 		size = {x=1, y=1, z=1}
 	},
+	markers = {
+		{
+			texture = "building_lib_arrow.png",
+			position = {x=1.5, y=0.2, z=0.5},
+			rotation = {x=math.pi/2, y=0, z=math.pi/2},
+			size = {x=10, y=10}
+		},{
+			texture = "building_lib_arrow.png",
+			position = {x=-0.5, y=0.2, z=0.5},
+			rotation = {x=math.pi/2, y=0, z=-math.pi/2},
+			size = {x=10, y=10}
+		},{
+			texture = "building_lib_arrow.png",
+			position = {x=0.5, y=0.2, z=1.5},
+			rotation = {x=math.pi/2, y=0, z=math.pi},
+			size = {x=10, y=10}
+		}
+	},
 	disable_orientation = disable_orientation
 })
 
@@ -46,6 +100,19 @@ building_lib.register_building("city_buildings:street_corner", {
 		filename = MP .. "/schematics/street.zip",
 		offset = {x=4, y=0, z=0},
 		size = {x=1, y=1, z=1}
+	},
+	markers = {
+		{
+			texture = "building_lib_arrow.png",
+			position = {x=-0.5, y=0.2, z=0.5},
+			rotation = {x=math.pi/2, y=0, z=-math.pi/2},
+			size = {x=10, y=10}
+		},{
+			texture = "building_lib_arrow.png",
+			position = {x=0.5, y=0.2, z=1.5},
+			rotation = {x=math.pi/2, y=0, z=math.pi},
+			size = {x=10, y=10}
+		}
 	},
 	disable_orientation = disable_orientation
 })
