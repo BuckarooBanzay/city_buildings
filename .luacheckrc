@@ -1,3 +1,6 @@
+globals = {
+	"city_buildings"
+}
 
 read_globals = {
 	-- Stdlib
