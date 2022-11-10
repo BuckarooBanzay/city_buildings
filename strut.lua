@@ -35,5 +35,6 @@ building_lib.register_building("city_buildings:full_block", {
     groups = {
         flat_surface = true,
         support = true
-    }
+    },
+    overview = "default:stone"
 })

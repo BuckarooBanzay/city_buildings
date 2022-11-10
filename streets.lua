@@ -40,7 +40,13 @@ building_lib.register_building("city_buildings:street_slope", {
 	},
 	groups = {
 		street_slope = true
-	}
+	},
+	overview = function(rel_mapblock_pos)
+		if vector.equals(rel_mapblock_pos, {x=0,y=0,z=0}) then
+			-- only show lower slope part in overview
+			return "moreblocks:slope_stone"
+		end
+	end
 })
 
 building_lib.register_building("city_buildings:street_straight", {

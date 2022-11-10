@@ -13,7 +13,8 @@ building_lib.register_building("city_buildings:terrain_surface", {
 	groups = {
 		flat_surface = true,
 		support = true
-	}
+	},
+	overview = "default:dirt_with_grass"
 })
 
 building_lib.register_building("city_buildings:terrain_underground", {
@@ -29,7 +30,8 @@ building_lib.register_building("city_buildings:terrain_underground", {
 	groups = {
 		flat_surface = true,
 		support = true
-	}
+	},
+	overview = "default:stone"
 })
 
 building_lib.register_building("city_buildings:terrain_slope_inner", {
@@ -38,7 +40,8 @@ building_lib.register_building("city_buildings:terrain_slope_inner", {
 		offset = {x=1, y=0, z=0},
 		size = {x=1, y=1, z=1},
         cache = true
-	}
+	},
+	overview = "moreblocks:slope_stone_inner"
 })
 
 building_lib.register_building("city_buildings:terrain_slope", {
@@ -51,7 +54,8 @@ building_lib.register_building("city_buildings:terrain_slope", {
 	rotation_offset = 90,
 	groups = {
 		terrain_slope = true
-	}
+	},
+	overview = "moreblocks:slope_stone"
 })
 
 building_lib.register_building("city_buildings:terrain_slope_outer", {
@@ -60,7 +64,8 @@ building_lib.register_building("city_buildings:terrain_slope_outer", {
 		offset = {x=3, y=0, z=0},
 		size = {x=1, y=1, z=1},
         cache = true
-	}
+	},
+	overview = "moreblocks:slope_stone_outer"
 })
 
 building_lib.register_building("city_buildings:water", {
@@ -73,5 +78,6 @@ building_lib.register_building("city_buildings:water", {
 	},
 	groups = {
 		water = true
-	}
+	},
+	overview = "default:water_source"
 })
