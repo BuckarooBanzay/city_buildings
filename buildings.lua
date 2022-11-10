@@ -19,6 +19,7 @@ for _, name in pairs(r) do
 		catalog = MP .. "/schematics/" .. name .. ".zip",
 		ground_conditions = {
 			on_group = "flat_surface"
-		}
+		},
+		overview = "default:stone"
 	})
 end
