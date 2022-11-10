@@ -2,6 +2,7 @@ local MP = minetest.get_modpath("city_buildings")
 
 city_buildings = {}
 
+dofile(MP .. "/util/streetname.lua")
 dofile(MP .. "/streets.lua")
 dofile(MP .. "/strut.lua")
 dofile(MP .. "/buildings.lua")
