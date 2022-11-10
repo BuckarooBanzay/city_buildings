@@ -18,16 +18,12 @@ building_lib.register_building("city_buildings:strut", {
 })
 
 building_lib.register_building("city_buildings:full_block", {
-	catalog = MP .. "/schematics/strut.zip",
-    replace = function(mapblock_pos)
-        if city_buildings.mapgen and city_buildings.mapgen.is_water(mapblock_pos) then
-            return {
-                ["air"] = "default:water_source"
-            }
-        end
-    end,
+	catalog = MP .. "/schematics/full.zip",
+    replace = {
+        ["full_block"] = "default:stone"
+    },
     ground_conditions = {
-        group = "flat_surface"
+        on_group = "flat_surface"
     },
     build_over = {
 		groups = {"water", "terrain_slope"}

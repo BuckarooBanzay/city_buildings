@@ -32,8 +32,9 @@ building_lib.register_building("city_buildings:street_slope", {
 	rotation_offset = 180,
 	disable_orientation = disable_orientation,
 	ground_conditions = {
-		{ group = "flat_surface" },
-		{ group = "support" }
+		{ on_group = "flat_surface" },
+		{ on_group = "support" },
+		{ group = "terrain_slope" }
 	},
 	build_over = {
 		groups = {"terrain_slope"}
@@ -44,7 +45,7 @@ building_lib.register_building("city_buildings:street_slope", {
 	overview = function(rel_mapblock_pos)
 		if vector.equals(rel_mapblock_pos, {x=0,y=0,z=0}) then
 			-- only show lower slope part in overview
-			return { name="moreblocks:slope_stone" }
+			return { name="moreblocks:slope_stone", param2 = 3 }
 		end
 	end
 })
@@ -79,7 +80,8 @@ building_lib.register_building("city_buildings:street_straight", {
 	ground_conditions = {
 		{ on_group = "flat_surface" },
 		{ on_group = "support" }
-	}
+	},
+	overview = "moreblocks:slab_tar_2"
 })
 
 building_lib.register_building("city_buildings:street_all_sides", {
@@ -123,7 +125,8 @@ building_lib.register_building("city_buildings:street_all_sides", {
 	ground_conditions = {
 		{ on_group = "flat_surface" },
 		{ on_group = "support" }
-	}
+	},
+	overview = "moreblocks:slab_tar_2"
 })
 
 building_lib.register_building("city_buildings:street_t", {
@@ -162,7 +165,8 @@ building_lib.register_building("city_buildings:street_t", {
 	ground_conditions = {
 		{ on_group = "flat_surface" },
 		{ on_group = "support" }
-	}
+	},
+	overview = "moreblocks:slab_tar_2"
 })
 
 building_lib.register_building("city_buildings:street_corner", {
@@ -184,6 +188,7 @@ building_lib.register_building("city_buildings:street_corner", {
 			size = {x=10, y=10}
 		}
 	},
+	on_metadata = on_streetsign_metadata,
 	disable_orientation = disable_orientation,
 	groups = {
 		street = true,
@@ -195,5 +200,6 @@ building_lib.register_building("city_buildings:street_corner", {
 	ground_conditions = {
 		{ on_group = "flat_surface" },
 		{ on_group = "support" }
-	}
+	},
+	overview = "moreblocks:slab_tar_2"
 })
