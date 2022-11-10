@@ -11,7 +11,10 @@ building_lib.register_building("city_buildings:street_slope", {
 		size = {x=1, y=2, z=1}
 	},
 	rotation_offset = 180,
-	disable_orientation = disable_orientation
+	disable_orientation = disable_orientation,
+	build_over = {
+		groups = {"terrain_slope"}
+	}
 })
 
 building_lib.register_building("city_buildings:street_straight", {

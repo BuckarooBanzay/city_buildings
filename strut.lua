@@ -8,5 +8,8 @@ building_lib.register_building("city_buildings:strut", {
                 ["air"] = "default:water_source"
             }
         end
-    end
+    end,
+    build_over = {
+		groups = {"water"}
+	}
 })

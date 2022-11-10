@@ -28,7 +28,10 @@ building_lib.register_building("city_buildings:terrain_slope", {
 		size = {x=1, y=1, z=1},
         cache = true
 	},
-	rotation_offset = 90
+	rotation_offset = 90,
+	groups = {
+		terrain_slope = true
+	}
 })
 
 building_lib.register_building("city_buildings:terrain_slope_outer", {
@@ -47,5 +50,8 @@ building_lib.register_building("city_buildings:water", {
 	},
 	replace = {
 		["full_block"] = "default:water_source"
+	},
+	groups = {
+		water = true
 	}
 })
