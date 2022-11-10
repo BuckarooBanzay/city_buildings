@@ -30,3 +30,18 @@ function city_buildings.overview_to_node_pos(node_pos)
     local min = mapblock_lib.get_mapblock_bounds_from_mapblock(mapblock_pos)
     return vector.add(min, 7.5)
 end
+
+local function place_overview_node(mapblock_pos, overview_def)
+    local node_pos = city_buildings.mapblock_pos_to_overview(mapblock_pos)
+    if type(overview_def) == "string" then
+        minetest.set_node(node_pos, { name=overview_def })
+    end
+end
+
+building_lib.register_on("placed_mapgen", function(mapblock_pos, building_def)
+    place_overview_node(mapblock_pos, building_def.overview)
+end)
+
+building_lib.register_on("placed", function(mapblock_pos, _, building_def)
+    place_overview_node(mapblock_pos, building_def.overview)
+end)
