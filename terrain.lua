@@ -1,6 +1,6 @@
 local MP = minetest.get_modpath("city_buildings")
 
-building_lib.register_building("city_buildings:terrain_full", {
+building_lib.register_building("city_buildings:terrain_surface", {
 	catalog = {
 		filename = MP .. "/schematics/terrain.zip",
 		offset = {x=0, y=0, z=0},
@@ -9,6 +9,18 @@ building_lib.register_building("city_buildings:terrain_full", {
 	},
 	replace = {
 		["default:cobble"] = "default:dirt_with_grass"
+	}
+})
+
+building_lib.register_building("city_buildings:terrain_underground", {
+	catalog = {
+		filename = MP .. "/schematics/terrain.zip",
+		offset = {x=0, y=0, z=0},
+		size = {x=1, y=1, z=1},
+        cache = true
+	},
+	replace = {
+		["default:cobble"] = "default:stone"
 	}
 })
 
