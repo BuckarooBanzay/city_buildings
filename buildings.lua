@@ -16,6 +16,9 @@ local r = {
 
 for _, name in pairs(r) do
 	building_lib.register_building("city_buildings:" .. name, {
-		catalog = MP .. "/schematics/" .. name .. ".zip"
+		catalog = MP .. "/schematics/" .. name .. ".zip",
+		ground_conditions = {
+			on_group = "flat_surface"
+		}
 	})
 end

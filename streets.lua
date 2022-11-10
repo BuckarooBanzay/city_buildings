@@ -31,8 +31,15 @@ building_lib.register_building("city_buildings:street_slope", {
 	},
 	rotation_offset = 180,
 	disable_orientation = disable_orientation,
+	ground_conditions = {
+		{ group = "flat_surface" },
+		{ group = "support" }
+	},
 	build_over = {
 		groups = {"terrain_slope"}
+	},
+	groups = {
+		street_slope = true
 	}
 })
 
@@ -55,7 +62,18 @@ building_lib.register_building("city_buildings:street_straight", {
 			size = {x=10, y=10}
 		}
 	},
-	disable_orientation = disable_orientation
+	disable_orientation = disable_orientation,
+	groups = {
+		street = true,
+		street_flat = true
+	},
+	build_over = {
+		groups = {"street_flat"}
+	},
+	ground_conditions = {
+		{ on_group = "flat_surface" },
+		{ on_group = "support" }
+	}
 })
 
 building_lib.register_building("city_buildings:street_all_sides", {
@@ -88,7 +106,18 @@ building_lib.register_building("city_buildings:street_all_sides", {
 		}
 	},
 	on_metadata = on_streetsign_metadata,
-	disable_orientation = disable_orientation
+	disable_orientation = disable_orientation,
+	groups = {
+		street = true,
+		street_flat = true
+	},
+	build_over = {
+		groups = {"street_flat"}
+	},
+	ground_conditions = {
+		{ on_group = "flat_surface" },
+		{ on_group = "support" }
+	}
 })
 
 building_lib.register_building("city_buildings:street_t", {
@@ -116,7 +145,18 @@ building_lib.register_building("city_buildings:street_t", {
 		}
 	},
 	on_metadata = on_streetsign_metadata,
-	disable_orientation = disable_orientation
+	disable_orientation = disable_orientation,
+	groups = {
+		street = true,
+		street_flat = true
+	},
+	build_over = {
+		groups = {"street_flat"}
+	},
+	ground_conditions = {
+		{ on_group = "flat_surface" },
+		{ on_group = "support" }
+	}
 })
 
 building_lib.register_building("city_buildings:street_corner", {
@@ -138,5 +178,16 @@ building_lib.register_building("city_buildings:street_corner", {
 			size = {x=10, y=10}
 		}
 	},
-	disable_orientation = disable_orientation
+	disable_orientation = disable_orientation,
+	groups = {
+		street = true,
+		street_flat = true
+	},
+	build_over = {
+		groups = {"street_flat"}
+	},
+	ground_conditions = {
+		{ on_group = "flat_surface" },
+		{ on_group = "support" }
+	}
 })

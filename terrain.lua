@@ -9,6 +9,10 @@ building_lib.register_building("city_buildings:terrain_surface", {
 	},
 	replace = {
 		["default:cobble"] = "default:dirt_with_grass"
+	},
+	groups = {
+		flat_surface = true,
+		support = true
 	}
 })
 
@@ -21,6 +25,10 @@ building_lib.register_building("city_buildings:terrain_underground", {
 	},
 	replace = {
 		["default:cobble"] = "default:stone"
+	},
+	groups = {
+		flat_surface = true,
+		support = true
 	}
 })
 
