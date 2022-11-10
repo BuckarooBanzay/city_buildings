@@ -79,5 +79,5 @@ building_lib.register_building("city_buildings:water", {
 	groups = {
 		water = true
 	},
-	overview = "default:water_source"
+	overview = "wool:blue"
 })
