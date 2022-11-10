@@ -1,7 +1,8 @@
 local MP = minetest.get_modpath("city_buildings")
 
 local disable_orientation = {
-	["moreblocks:iron_stone_bricks"] = true
+	["moreblocks:iron_stone_bricks"] = true,
+	["street_signs:sign_basic"] = true
 }
 
 local has_street_signs_mod = minetest.get_modpath("street_signs")
