@@ -9,9 +9,18 @@ building_lib.register_building("city_buildings:strut", {
             }
         end
     end,
-    build_over = {
-		groups = {"water"}
-	},
+    conditions = {
+        {
+            ["*"] = { empty = true },
+            ["underground"] = { group = "flat_surface" }
+        },{
+            ["*"] = { group = "water" },
+            ["underground"] = { group = "flat_surface" }
+        },{
+            ["*"] = { empty = true },
+            ["underground"] = { group = "support" }
+        }
+    },
     group = {
         support = true
     }
@@ -22,12 +31,17 @@ building_lib.register_building("city_buildings:full_block", {
     replace = {
         ["full_block"] = "default:stone"
     },
-    ground_conditions = {
-        on_group = "flat_surface"
+    conditions = {
+        {
+            ["*"] = { empty = true },
+            ["underground"] = { group = "flat_surface" }
+        },{
+            ["*"] = { group = "water" },
+            ["underground"] = { group = "flat_surface" }
+        },{
+            ["*"] = { group = "terrain_slope"}
+        }
     },
-    build_over = {
-		groups = {"water", "terrain_slope"}
-	},
     groups = {
         flat_surface = true,
         support = true

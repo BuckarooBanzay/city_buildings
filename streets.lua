@@ -32,13 +32,19 @@ building_lib.register_building("city_buildings:street_slope", {
 	},
 	rotation_offset = 180,
 	disable_orientation = disable_orientation,
-	ground_conditions = {
-		{ on_group = "flat_surface" },
-		{ on_group = "support" },
-		{ group = "terrain_slope" }
-	},
-	build_over = {
-		groups = {"terrain_slope"}
+	conditions = {
+		{
+			-- existing slope
+			["base"] = { group = "terrain_slope" }
+		},{
+			-- flat surface
+			["*"] = { empty = true },
+			["underground"] = { group = "flat_surface"}
+		},{
+			-- support
+			["*"] = { empty = true },
+			["underground"] = { group = "flat_surface"}
+		}
 	},
 	groups = {
 		street_slope = true
@@ -50,6 +56,18 @@ building_lib.register_building("city_buildings:street_slope", {
 		end
 	end
 })
+
+local street_tile_conditions = {
+	{
+		["*"] = { empty = true },
+		["underground"] = { group = "flat_surface" }
+	},{
+		["*"] = { empty = true },
+		["underground"] = { support = true }
+	},{
+		["*"] = { group = "street_flat"}
+	}
+}
 
 building_lib.register_building("city_buildings:street_straight", {
 	catalog = {
@@ -71,16 +89,10 @@ building_lib.register_building("city_buildings:street_straight", {
 		}
 	},
 	disable_orientation = disable_orientation,
+	conditions = street_tile_conditions,
 	groups = {
 		street = true,
 		street_flat = true
-	},
-	build_over = {
-		groups = {"street_flat"}
-	},
-	ground_conditions = {
-		{ on_group = "flat_surface" },
-		{ on_group = "support" }
 	},
 	overview = "moreblocks:slab_tar_2"
 })
@@ -120,13 +132,7 @@ building_lib.register_building("city_buildings:street_all_sides", {
 		street = true,
 		street_flat = true
 	},
-	build_over = {
-		groups = {"street_flat"}
-	},
-	ground_conditions = {
-		{ on_group = "flat_surface" },
-		{ on_group = "support" }
-	},
+	conditions = street_tile_conditions,
 	overview = "moreblocks:slab_tar_2"
 })
 
@@ -160,13 +166,7 @@ building_lib.register_building("city_buildings:street_t", {
 		street = true,
 		street_flat = true
 	},
-	build_over = {
-		groups = {"street_flat"}
-	},
-	ground_conditions = {
-		{ on_group = "flat_surface" },
-		{ on_group = "support" }
-	},
+	conditions = street_tile_conditions,
 	overview = "moreblocks:slab_tar_2"
 })
 
@@ -195,12 +195,6 @@ building_lib.register_building("city_buildings:street_corner", {
 		street = true,
 		street_flat = true
 	},
-	build_over = {
-		groups = {"street_flat"}
-	},
-	ground_conditions = {
-		{ on_group = "flat_surface" },
-		{ on_group = "support" }
-	},
+	conditions = street_tile_conditions,
 	overview = "moreblocks:slab_tar_2"
 })

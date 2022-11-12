@@ -17,8 +17,11 @@ local r = {
 for _, name in pairs(r) do
 	building_lib.register_building("city_buildings:" .. name, {
 		catalog = MP .. "/schematics/" .. name .. ".zip",
-		ground_conditions = {
-			on_group = "flat_surface"
+		conditions = {
+			{
+				["*"] = { empty = true },
+				["underground"] = { group = "flat_surface" }
+			}
 		},
 		overview = "default:stone"
 	})
