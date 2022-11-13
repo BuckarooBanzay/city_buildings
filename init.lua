@@ -7,6 +7,7 @@ dofile(MP .. "/streets.lua")
 dofile(MP .. "/strut.lua")
 dofile(MP .. "/buildings.lua")
 dofile(MP .. "/terrain.lua")
+dofile(MP .. "/conditions.lua")
 
 if minetest.get_mapgen_setting("mg_name") == "singlenode" then
     -- register mapgen
