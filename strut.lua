@@ -21,7 +21,7 @@ building_lib.register_building("city_buildings:strut", {
             ["underground"] = { group = "support" }
         }
     },
-    group = {
+    groups = {
         support = true
     }
 })
