@@ -23,6 +23,14 @@ for _, name in pairs(r) do
 				["underground"] = { group = "flat_surface" }
 			}
 		},
-		overview = "default:stone"
+		overview = "default:stone",
+		replace = function(mapblock_pos)
+			local biome = city_buildings.mapgen.get_biome(mapblock_pos)
+			if biome.name == "dry" then
+				return {
+					["default:dirt_with_grass"] = "default:dirt_with_dry_grass"
+				}
+			end
+		end
 	})
 end
