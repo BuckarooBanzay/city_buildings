@@ -23,7 +23,8 @@ building_lib.register_building("city_buildings:strut", {
     },
     groups = {
         support = true
-    }
+    },
+    overview = "moreblocks:iron_stone_bricks"
 })
 
 building_lib.register_building("city_buildings:full_block", {
