@@ -47,7 +47,8 @@ building_lib.register_building("city_buildings:street_slope", {
 		}
 	},
 	groups = {
-		street_slope = true
+		street_slope = true,
+		street = true
 	},
 	overview = function(rel_mapblock_pos)
 		if vector.equals(rel_mapblock_pos, {x=0,y=0,z=0}) then
@@ -196,4 +197,50 @@ building_lib.register_building("city_buildings:street_corner", {
 	},
 	conditions = street_tile_conditions,
 	overview = "moreblocks:slab_tar_2"
+})
+
+building_lib.register_autoplacer("street", {
+	propagate = { group = "street_flat" },
+	buildings = {
+		{
+			name = "city_buildings:street_all_sides",
+			rotations = {0},
+			fallback = true,
+			conditions = {
+				["(0,0,1)"] = { group = "street" },
+				["(0,0,-1)"] = { group = "street" },
+				["(1,0,0)"] = { group = "street" },
+				["(-1,0,0)"] = { group = "street" }
+			}
+		},{
+			name = "city_buildings:street_t",
+			rotations = {0, 90, 180, 270},
+			conditions = {
+				["(1,0,0)"] = { group = "street" },
+				["(-1,0,0)"] = { group = "street" },
+				["(0,0,1)"] = { group = "street" }
+			}
+		},{
+			name = "city_buildings:street_corner",
+			rotations = {0, 90, 180, 270},
+			conditions = {
+				["(0,0,1)"] = { group = "street" },
+				["(-1,0,0)"] = { group = "street" }
+			}
+		},{
+			name = "city_buildings:street_straight",
+			rotations = {0, 90},
+			conditions = {
+				["(1,0,0)"] = { group = "street" },
+				["(-1,0,0)"] = { group = "street" }
+			}
+		},{
+			name = "city_buildings:street_slope",
+			rotations = {0, 90, 180, 270},
+			conditions = {
+				["(-1,0,0)"] = { group = "street" },
+				["(1,1,0)"] = { group = "street" }
+			}
+		}
+	}
 })
