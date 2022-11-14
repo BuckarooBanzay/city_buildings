@@ -58,6 +58,39 @@ building_lib.register_building("city_buildings:street_slope", {
 	end
 })
 
+building_lib.register_building("city_buildings:street_tunnel", {
+	catalog = {
+		filename = MP .. "/schematics/street.zip",
+		offset = {x=2, y=0, z=2},
+		size = {x=1, y=1, z=1}
+	},
+	markers = {
+		{
+			texture = "building_lib_arrow.png",
+			position = {x=1.5, y=0.2, z=0.5},
+			rotation = {x=math.pi/2, y=0, z=math.pi/2},
+			size = {x=10, y=10}
+		},{
+			texture = "building_lib_arrow.png",
+			position = {x=-0.5, y=0.2, z=0.5},
+			rotation = {x=math.pi/2, y=0, z=-math.pi/2},
+			size = {x=10, y=10}
+		}
+	},
+	disable_orientation = disable_orientation,
+	conditions = {
+		{
+			["*"] = { group = "support" }
+		}
+	},
+	groups = {
+		street = true,
+		street_connecting = true,
+		street_tunnel = true
+	},
+	overview = "moreblocks:slab_tar_2"
+})
+
 local street_tile_conditions = {
 	{
 		["*"] = { empty = true },
@@ -92,7 +125,8 @@ building_lib.register_building("city_buildings:street_straight", {
 	conditions = street_tile_conditions,
 	groups = {
 		street = true,
-		street_flat = true
+		street_flat = true,
+		street_connecting = true
 	},
 	overview = "moreblocks:slab_tar_2"
 })
@@ -130,7 +164,8 @@ building_lib.register_building("city_buildings:street_all_sides", {
 	disable_orientation = disable_orientation,
 	groups = {
 		street = true,
-		street_flat = true
+		street_flat = true,
+		street_connecting = true
 	},
 	conditions = street_tile_conditions,
 	overview = "moreblocks:slab_tar_2"
@@ -164,7 +199,8 @@ building_lib.register_building("city_buildings:street_t", {
 	disable_orientation = disable_orientation,
 	groups = {
 		street = true,
-		street_flat = true
+		street_flat = true,
+		street_connecting = true
 	},
 	conditions = street_tile_conditions,
 	overview = "moreblocks:slab_tar_2"
@@ -193,7 +229,8 @@ building_lib.register_building("city_buildings:street_corner", {
 	disable_orientation = disable_orientation,
 	groups = {
 		street = true,
-		street_flat = true
+		street_flat = true,
+		street_connecting = true
 	},
 	conditions = street_tile_conditions,
 	overview = "moreblocks:slab_tar_2"
@@ -233,6 +270,13 @@ building_lib.register_autoplacer("street", {
 			conditions = {
 				["(1,0,0)"] = { group = "street" },
 				["(-1,0,0)"] = { group = "street" }
+			}
+		},{
+			name = "city_buildings:street_tunnel",
+			rotations = {0, 90, 180, 270},
+			conditions = {
+				["(1,0,0)"] = { group = "street" },
+				["(0,0,0)"] = { group = "support"}
 			}
 		},{
 			name = "city_buildings:street_slope",
