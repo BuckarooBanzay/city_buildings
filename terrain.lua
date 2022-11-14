@@ -17,6 +17,23 @@ building_lib.register_building("city_buildings:terrain_surface", {
 	overview = "default:dirt_with_grass"
 })
 
+building_lib.register_building("city_buildings:terrain_surface_dry", {
+	catalog = {
+		filename = MP .. "/schematics/terrain.zip",
+		offset = {x=0, y=0, z=0},
+		size = {x=1, y=1, z=1},
+        cache = true
+	},
+	replace = {
+		["default:cobble"] = "default:dirt_with_dry_grass"
+	},
+	groups = {
+		flat_surface = true,
+		support = true
+	},
+	overview = "default:dirt_with_dry_grass"
+})
+
 building_lib.register_building("city_buildings:terrain_underground", {
 	catalog = {
 		filename = MP .. "/schematics/terrain.zip",
